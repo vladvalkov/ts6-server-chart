@@ -75,16 +75,11 @@ MariaDB fullname
 Check if storageClass is defined and exists
 */}}
 {{- define "teamspeak.isStorageClass" -}}
-{{- $sc := $.storageClass -}}
-{{- $classes := lookup "storage.k8s.io/v1" "StorageClass" "" -}}
+{{- $sc := lookup "storage.k8s.io/v1" "StorageClass" "" .storageClass -}}
 {{- if $sc -}}
-  {{- range $name, $class := $classes.items -}}
-    {{- if eq $name $sc }}
 true
-    {{- end -}}
-  {{- end -}}
 {{- else -}}
-true
+false
 {{- end -}}
 {{- end -}}
 
