@@ -1,10 +1,11 @@
+{{/*
 # TeamSpeak 6 Server Helm Chart Notes
 
 Thank you for installing {{ .Release.Name }}!
 
 ## Quick Start
 
-Your TeamSpeak 6 server is now running! 
+Your TeamSpeak 6 server is now running!
 
 - **Release Name**: {{ .Release.Name }}
 - **Namespace**: {{ .Release.Namespace }}
@@ -58,7 +59,7 @@ The TeamSpeak server exposes the following ports via the Kubernetes Service `{{ 
 - **Pods**: `kubectl get sts {{ include "teamspeak.fullname" . }} -n {{ .Release.Namespace }}`
 - **Logs**: `kubectl logs -f sts/{{ include "teamspeak.fullname" . }} -n {{ .Release.Namespace }}`
 - **Describe**: `kubectl describe sts {{ include "teamspeak.fullname" . }} -n {{ .Release.Namespace }}`
-- **Port Forward** (for local testing): 
+- **Port Forward** (for local testing):
   ```
   kubectl port-forward svc/{{ include "teamspeak.fullname" . }} 9987:{{ .Values.voice.port }}/udp 10080:{{ .Values.webquery.port }} -n {{ .Release.Namespace }}
   ```
@@ -78,7 +79,7 @@ The TeamSpeak server exposes the following ports via the Kubernetes Service `{{ 
 
 1. Connect a TeamSpeak 6 client to the voice port.
 2. Use ServerQuery to create an admin account: `telnet <IP> {{ .Values.webquery.port }}` then `serverinfo` or `login serveradmin <password>`.
-3. For production: 
+3. For production:
    - Set secure passwords (e.g., for MariaDB).
    - Enable Ingress with TLS.
    - Tune resources and probes.
@@ -95,3 +96,4 @@ To uninstall: `helm uninstall {{ .Release.Name }} -n {{ .Release.Namespace }}`
 {{- end }}
 
 Enjoy your TeamSpeak server! 🎤
+*/}}
