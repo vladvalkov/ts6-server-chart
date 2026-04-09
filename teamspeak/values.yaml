@@ -38,6 +38,7 @@ service:
 
 voice:
   port: 9987
+  threadsUdp: 4
 filetransfer:
   port: 30033
 webquery:

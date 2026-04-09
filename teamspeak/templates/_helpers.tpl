@@ -94,7 +94,7 @@ server:
     - 0.0.0.0
     - "::"
   machine-id: ""
-  threads-voice-udp: 4
+  threads-voice-udp: {{ .Values.voice.threadsUdp }}
   log-path: /var/tsserver/logs
   log-append: 0
   no-default-virtual-server: 0
